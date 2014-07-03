@@ -1,0 +1,78 @@
+
+<div class="crumbs">
+     <ul id="breadcrumbs" class="breadcrumb">
+       <li> <i class="icon-home"></i> <a href="#/home/{{PartyUniqueID}}">Dashboard</a> </li>
+        <li ng-repeat="breadcrumb in breadcrumbs.getAll()|limitTo:1">
+      <ng-switch on="$last">
+       
+        <span ng-switch-default><a href="">{{breadcrumb.name}}</a></span>
+       </ng-switch>
+    </li>
+   </ul>
+</div> 
+<div class="container">
+	<div class="row banner-section">
+		<img src="app/images/banner.png" border="0"/>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="statbox widget box box-shadow">
+				<div class="widget-content">
+		 			<h3><span ng-bind="WorkstationAgent"></span> Overview</h3>
+			<p>Secure document transfer tool for Providers and Recipients </p>
+			 <ul>
+	            <li>Your customer/consumer is just a click away</li>
+				<li>Supports faster, easier, secure, electronic document sharing between providers and recipients (Physician with patient, Accountants with taxpayers, Lawyers with clients,..)</li>
+				<li>Easily and securely transfers any document from your PC</li>
+				<li>Supports privacy and security standards</li>
+				<li>Authenticated and encrypted document transfer</li>
+				<li>Supporting all healthcare standards</li>
+				<li>In/out draft copy available in recipients PC.</li>
+				<li>Instant e-mail and sms notification</li>
+				</ul>
+
+					<a href="javascript:void(0);" class="more">Read More <i class="pull-right icon-angle-right"></i></a> 
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="statbox widget box box-shadow">
+				<div class="widget-content">
+		 			<h3><span ng-bind="ProductFamily"></span></h3>
+			<p><span ng-bind="WorkstationAgent"></span> -<span ng-bind="ExtensibleAgent"></span> (Windows, Mac, Linux, etc. Windows is the current focus) </p>
+			<p><span ng-bind="ExtensionServer"></span> is a series of server apps such as agent admin, gateway monitor, and print processor which acts as the secure conduit between all agents and external cloud systems </p>
+			
+				 <ul>
+				 <li><span ng-bind="ExtensionServer"></span>.AS - Admin Services (setting profiles, users, XA downloader, etc.)</li>
+	<li><span ng-bind="ExtensionServer"></span>.PP - Print Processor (CUPS)</li>
+	<li><span ng-bind="ExtensionServer"></span>.MQ - Message Queue </li>
+	<li><span ng-bind="ExtensionServer"></span>.MQT - MQTT</li>
+	<li><span ng-bind="ExtensionServer"></span>.MQP for XMPP</li>
+	<li><span ng-bind="ExtensionServer"></span>.DS - Data Services (oData, persistence library, etc.)</li>
+				
+				</ul>
+					<a href="javascript:void(0);" class="more">View More <i class="pull-right icon-angle-right"></i></a> 
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="statbox widget box box-shadow">
+				<div class="widget-content">
+					<h3><span ng-bind="Print2Share"></span></h3>
+					<ul>
+					<li>Right click any document and select Print to <provider> option</li>
+					<li>Fill purpose of sending and description of the document</li>
+					<li>Select your providers (Doctors / Accountants / Lawyers) print driver and click print.</li>
+					<li>Your document securely transmits to print server.</li>
+					<li>Converting document to PDF format</li>
+					<li>Authenticating with password and encrypting document.</li>
+					<li>Instant transfer or notification to <provider></li>
+
+					</ul>
+
+					<a href="javascript:void(0);" class="more">View More <i class="pull-right icon-angle-right"></i></a> 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

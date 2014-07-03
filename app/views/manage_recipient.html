@@ -1,0 +1,35 @@
+<bread-crumbs></bread-crumbs>
+<div class="container" id="recipientContainer">
+	<div class="row">
+	<div class="col-md-12">
+		<div class="span12"><h3><strong>Manage Recipient</strong></h3><p>&nbsp;</p></div>
+		<div class="widget">
+			<div class="widget-header">
+				<h4><i class="icon-reorder"></i> Recipients</h4>
+			</div>
+			<div class="widget-content">
+				<table class="table table-striped table-hover table-checkable datatable">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Printer</th>
+							<th>Draft Folder</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="recipients in recipient">
+							<td><a href="#/managerecipient/{{recipients.party_id}}">{{recipients.person_fname}} {{recipients.person_lname}}</a></td>
+							<td>{{recipients.email}}</td>
+							<td class="hidden-xs">{{recipients.recipient_printer}}</td>
+							<td>{{recipients.recipient_draft}}</td>
+							<td><a href="" ng-click="deleteRecipient(recipients.party_id)">Delete</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

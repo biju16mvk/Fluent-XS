@@ -1,0 +1,80 @@
+<div class="tab-pane active" id="tab12">
+	<h2 class="heading">Code Analysis</h2>
+	<div class="tabbable">
+		<ul class="nav nav-tabs">
+			<li><a href="#/console/nup/worklist/restapi" data-toggle="tab">REST API</a></li>
+			<li><a href="#/console/nup/worklist/js-sdk" data-toggle="tab">JS SDK</a>
+				<li><a href="#/console/nup/worklist/unit-tests" data-toggle="tab">Unit Tests</a></li>
+				<!-- <li><a href="#/services/persistence-core/functional-tests">Functional Tests</a></li> -->
+				<li><a href="#/console/nup/worklist/performance-tests" data-toggle="tab">Performance Tests</a></li>
+				<li><a href="#/console/nup/worklist/code-coverage" data-toggle="tab">Code Coverage</a></li>
+				<li class="active"><a href="#/console/nup/worklist/code-analysis" data-toggle="tab">Code Analysis</a></li>
+				<li><a href="#/console/nup/worklist/about" data-toggle="tab">About</a></li>
+				<li><a href="#/console/nup/worklist/activity" data-toggle="tab">Activity</a></li>
+			</ul>
+		</div>
+		<div class="tab-content overflow-visible console-nup" >
+			<div class="tabbable">
+				<!-- Only required for left/right tabs -->
+				<div class="row">
+					<div class="col-sm-3">
+						<ul class="nav nav-list " id="left-content-area">
+							<li class="active">
+								<a name="app/scripts/app.js" href="#tab1" onclick="return false" class="codeanalaysis" data-toggle="tab">app.js</a>
+							</li>
+							<li>
+								<a name="app/scripts/sdk/ActivityApi.js" href="#tab1" onclick="return false" class="codeanalaysis" data-toggle="tab">ActivityApi.js</a>
+							</li>
+							<li>
+								<a name="app/scripts/sdk/AuthenticationApi.js" href="#tab2" onclick="return false" class="codeanalaysis" data-toggle="tab">AuthenticationApi.js</a>
+							</li>
+							<li class="">
+								<a name="app/scripts/sdk/ConfigurationApi.js" href="#tab3" onclick="return false" class="codeanalaysis" data-toggle="tab">ConfigurationApi.js</a>
+							</li>
+							<li class="">
+								<a name="app/scripts/sdk/ESBApi.js" href="#tab3" onclick="return false" class="codeanalaysis" data-toggle="tab">ESBApi.js</a>
+							</li>
+							<li class="">
+								<a name="app/scripts/sdk/FluentXSApi.js" href="#tab4" onclick="return false" class="codeanalaysis" data-toggle="tab">FluentXSApi.js</a>
+							</li>
+							<li class="">
+								<a name="app/scripts/sdk/ProfileApi.js" href="#tab5" onclick="return false" class="codeanalaysis" data-toggle="tab">ProfileApi.js</a>
+							</li>
+							<li class="">
+								<a name="app/scripts/controllers/home.js" href="#tab6" onclick="return false" class="codeanalaysis" data-toggle="tab">controllers/home.js</a>
+							</li>	
+							<li class="">
+								<a name="app/scripts/controllers/main.js" href="#tab7" onclick="return false" class="codeanalaysis" data-toggle="tab">controllers/main.js</a>
+							</li>
+							<li class="">
+								<a name="app/scripts/controllers/recepient.js" href="#tab8" onclick="return false" class="codeanalaysis" data-toggle="tab">controllers/recepient.js</a>
+							</li>
+							<li class="">
+								<a name="app/scripts/controllers/signup.js" href="#tab9" onclick="return false" class="codeanalaysis" data-toggle="tab">controllers/signup.js</a>
+							</li>
+							<li class="">
+								<a name="app/scripts/services/home.js" href="#tab10" onclick="return false" class="codeanalaysis" data-toggle="tab">services/home.js</a>
+							</li>
+							<li class="">
+								<a name="app/scripts/directives/home.js" href="#tab11" onclick="return false" class="codeanalaysis" data-toggle="tab">directives/home.js</a>
+							</li>		
+						</ul>
+					</div>
+					<div class="col-sm-9">
+						<div class="tab-content right">
+							<div id="jshint-code-analysis" class="tab-pane active"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var ca=new CodeAnalysis();
+			var path = 'app/scripts/app.js';
+			ca.analysisCode(path, '#jshint-code-analysis');
+			$('.codeanalaysis').click(function(){
+				var path = $(this).attr('name');
+				ca.analysisCode(path, '#jshint-code-analysis');
+			});
+		</script>
+	</div>

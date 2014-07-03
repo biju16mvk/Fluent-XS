@@ -1,0 +1,7 @@
+<div class="row-fluid ">
+	<div class="span4">Recipient</div>
+<div class="span8">
+	<select id="selectedRecipient" name="selectedRecipient[]" ng-model="credentials.selectedRecipient" ng-multiple="true" ng-options="option.party_id as option.person_fname + ' ' + option.person_lname  for option in recipient" multiple="multiple" class="input-medium">
+	</select>
+</div>
+</div>

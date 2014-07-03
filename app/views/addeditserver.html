@@ -1,0 +1,31 @@
+<bread-crumbs></bread-crumbs>
+<div class="well">
+	<!-- <div id="flash" class="alert fade in alert-success" ng-show="flash" ng-bind="flash"></div> -->
+	<form id="frmmanageServer" name="frmmanageServer" ng-submit="addServer($event)" class="form-horizontal" novalidate>
+		<div class="widget-header">
+			<h4>Add/Edit Server Details</h4>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-md-4 control-label">Name <span class="aesterisk">*</span></label>
+					<div class="col-md-8">
+						<input type="text" id="server_name" name="server_name" ng-model="credentials.server_name" class="form-control" placeholder="Enter Server Name.." required/>
+						<input type="hidden" name="server_id" ng-model="credentials.server_id" value=''/>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-md-4 control-label">Base URL <span class="aesterisk">*</span></label>
+					<div class="col-md-8">
+						<input type="text" id="server_baseurl" name="server_baseurl" ng-model="credentials.server_baseurl" class="form-control" placeholder="Enter Base URL.." required/>
+					</div>
+				</div>
+			</div>
+		</div>
+			<div class="form-actions">
+				<button class="btn btn-primary"  type="submit" ng-disabled="frmmanageServer.$invalid">Save</button>
+			</div>
+	</form>
+</div>

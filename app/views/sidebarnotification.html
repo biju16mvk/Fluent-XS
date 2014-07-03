@@ -1,0 +1,27 @@
+<div ng-if="Authenticated">
+   <div class="sidebar-title"> <span>Notifications</span></div>
+   <ul class="notifications demo-slide-in">
+      <li>
+         <div class="col-left"> <span class="label label-success"><i class="icon-envelope"></i></span> </div>
+         <div class="col-right with-margin"> <span class="message" ng-bind-template="{{todayactivity}} activities today"></span> </div>
+      </li>
+      <li>
+         <div class="col-left"> <span class="label label-success"><i class="icon-plus"></i></span> </div>
+         <div class="col-right with-margin"> <span class="message">
+            <ng-pluralize count="todayuser"
+               when="{
+               '0': 'No user registered today',
+               'one': '1 user registered today',
+               'other': '{} users registered today'}">
+            </ng-pluralize></span> </div>
+      </li>
+      <li>
+         <div class="col-left"> <span class="label label-success"><i class="icon-envelope"></i></span> </div>
+         <div class="col-right with-margin"> <span class="message" ng-bind-template="{{ActivityCount}} total activities"></span> </div>
+      </li>
+      <li>
+         <div class="col-left"> <span class="label label-success"><i class="icon-plus"></i></span> </div>
+         <div class="col-right with-margin"> <span class="message" ng-bind-template="{{UserCount}} total users"></span></div>
+      </li>
+   </ul>
+</div>

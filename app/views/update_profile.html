@@ -1,0 +1,169 @@
+<bread-crumbs></bread-crumbs>
+   <form id="frmUpdate" class="form-horizontal" name="frmUpdate" ng-submit="updateProfile($event)" novalidate>
+      <div class="widget-header">
+         <h4><strong>Update Profile</strong></h4>
+      </div>
+      <div class="widget-header">
+         <h4>General Information</h4>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="col-md-4 control-label">First name <span class="aesterisk">*</span></label>
+               <div class="col-md-8">
+                  <input type="text" id="firstname" name="firstname" ng-model="credentials.firstname" class="form-control" placeholder="Enter First Name.." required/>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="col-md-4 control-label">Middle name </label>
+               <div class="col-md-8">
+                  <input type="text" id="middlename" name="middlename" ng-model="credentials.middlename" class="form-control"  placeholder="Enter Middle Name.." />
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="col-md-4 control-label">Last name <span class="aesterisk">*</span></label>
+               <div class="col-md-8">
+                  <input type="text" id="lastname" name="lastname" ng-model="credentials.lastname"  class="form-control"  placeholder="Enter Last Name.." required/>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="col-md-4 control-label">Living Arrangement</span></label>
+               <div class="col-md-8">
+                 <select id="live_id" name="live_id" ng-model="credentials.live_id" ng-options="option.id as option.name for option in livingarrangement" class="form-control"></select>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="col-md-4 control-label">Education</label>
+               <div class="col-md-8">
+                  <select id="education_id" name="education_id[]" ng-model="credentials.education_id" ng-options="option.id as option.name for option in education"  multiple="multiple"  class="form-control"></select>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="col-md-4 control-label">Gender</label>
+               <div class="col-md-8">
+                   <div data-toggle-name="gender" data-toggle="buttons-radio" class="btn-group">
+                  <button type="button"   value="2" ng-class="getGenderClass(2)" class="btn btn-primary"   data-toggle="button" ng-click="genderFemaleValue(2)">Female</button>
+                  <button type="button"   value="1" ng-class="getGenderClass(1)" class="btn btn-primary"  data-toggle="button" ng-click="genderMaleValue(1)">Male</button>
+                  <button type="button"   value="3" ng-class="getGenderClass(3)" class="btn btn-primary" data-toggle="button" ng-click="genderOtherValue(3)">Other</button>
+                  <button type="button"   value="4" ng-class="getGenderClass(4)" class="btn btn-primary" data-toggle="button" ng-click="genderUnknownValue(4)">Unknown</button>
+               </div>
+               </div>
+            </div>
+         </div>
+                      
+      </div>
+      <div class="widget-header">
+         <h4>Contact Information</h4>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="col-md-4 control-label">Address</label>
+               <div class="col-md-8">
+                  <input type="text" id="street" name="street" ng-model="credentials.address" class="form-control" placeholder="Address1.."/>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="col-md-4 control-label">Street </label>
+               <div class="col-md-8">
+                  <input type="text" id="address" name="address" ng-model="credentials.street" class="form-control" placeholder="Address2.."/>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="col-md-4 control-label">Zip</label>
+               <div class="col-md-8">
+                 <input type="text" id="zip" name="zip" ng-model="credentials.zip"  class="form-control" placeholder="Zip.." />
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="col-md-4 control-label">City</span></label>
+               <div class="col-md-8">
+                 <input type="text" id="city" name="city" ng-model="credentials.city" class="form-control"  placeholder="City.." />
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="col-md-4 control-label">State</label>
+               <div class="col-md-8">
+                  <input type="text" id="state" name="state" ng-model="credentials.state" class="form-control" placeholder="State.." />
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="col-md-4 control-label">Country</label>
+               <div class="col-md-8">
+                  <select id="countryid" name="countryid" ng-model="credentials.countryid" ng-options="option.id as option.name for option in country" class="form-control"></select>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="col-md-4 control-label">Email<span class="aesterisk">*</span></label>
+               <div class="col-md-8">
+                  <input type="email" id="email" name="email" ng-model="credentials.email" class="form-control" placeholder="Email.."  required/></div>
+               <div class="custom-error" style="color:#F00">
+                 <span ng-show="frmUpdate.email.$error.email">Please enter a valid email address</span>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="col-md-4 control-label">Phone</label>
+               <div class="col-md-8">
+                  <input type="text" id="phone" name="phone" ng-model="credentials.phone"  class="form-control"  placeholder="Phone.." />
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="col-md-4 control-label">Fax</label>
+               <div class="col-md-8">
+                  <input type="text" id="fax" name="fax" ng-model="credentials.fax" class="form-control" placeholder="Fax.."/>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="col-md-4 control-label">Recipient</label>
+               <div class="col-md-8">
+                  <multiselect class="input-lg" multiple="true" ng-model="credentials.selectedRecipient" options="option.party_id as option.person_fname + ' ' + option.person_lname  for option in recipient" change="selected()"></multiselect>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-primary"  type="submit" ng-disabled="frmUpdate.$invalid">Save</button>
+    </div>  
+</form>
+</div>
+</div>

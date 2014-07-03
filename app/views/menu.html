@@ -1,0 +1,78 @@
+<div id="sidebar" class="sidebar-fixed" ng-show="Authenticated">
+   <div id="sidebar-content">
+      <ul id="nav" ng-controller="SidebarCtrl">
+         <li ng-class="homeClass"> <a href="#/home/{{PartyUniqueID}}"> <i class="icon-dashboard"></i> Dashboard </a> </li>
+         <li ng-show="Authenticated && PersonTypeId === 1 || PersonTypeId === 6" ng-class="monitorClass"> <a href="javascript:void(0);"> <i class="icon-desktop"></i> Monitor <!-- <span class="label label-danger pull-right">6</span> --> </a>
+         <ul class="sub-menu">
+            <li> <a href="#/serverstatus"> <i class="icon-angle-right"></i> Server Status </a> </li>
+         </ul>
+      </li>
+      <li ng-show="Authenticated && PersonTypeId === 1 || PersonTypeId === 2" ng-class="configurationClass"> <a href="javascript:void(0);"> <i class="icon-large icon-cog"></i> Configuration</a>
+         <ul class="sub-menu">
+            <li ng-show="Authenticated && PersonTypeId === 1 || PersonTypeId === 2"> <a href="javascript:void(0);"> <i class="icon-list-ol"></i> Manage Recipient</a>
+               <ul class="sub-menu">
+                  <li> <a href="#/addrecipient"> <i class="icon-cogs"></i> Add Recipients<span class="arrow"></span> </a></li>
+                     <li> <a href="#/managerecipient"> <i class="icon-cogs"></i> List Recipients<span class="arrow"></span> </a>
+                     </li>
+                  </ul>
+               </li>
+            <li ng-show="Authenticated && PersonTypeId === 1"> <a href="javascript:void(0);"> <i class="icon-list-ol"></i> Manage Tenant</a>
+               <ul class="sub-menu">
+                  <li> <a href="#/addtenant"> <i class="icon-cogs"></i> Add Tenant<span class="arrow"></span> </a></li>
+                     <li> <a href="#/managetenant"> <i class="icon-cogs"></i> List Tenants<span class="arrow"></span> </a>
+                     </li>
+                  </ul>
+               </li>
+            <li ng-show="Authenticated && PersonTypeId === 1 || PersonTypeId === 2"> <a href="javascript:void(0);"> <i class="icon-list-ol"></i> Manage Users</a>
+               <ul class="sub-menu">
+                  <li> <a href="#/manageusers"> <i class="icon-cogs"></i> List Users </a> </li>
+                  </ul>
+               </li>
+               <li ng-show="Authenticated && PersonTypeId === 1"> <a href="javascript:void(0);"> <i class="icon-list-ol"></i> Manage Server</a>
+                  <ul class="sub-menu">
+                     <li> <a href="#/addserver"> <i class="icon-cogs"></i> Add Server<span class="arrow"></span> </a></li>
+                        <li> <a href="#/manageserver"> <i class="icon-cogs"></i> List Servers<span class="arrow"></span> </a>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+            <li ng-show="Authenticated && PersonTypeId === 1 || PersonTypeId === 6" ng-class="nupClass"> <a href="javascript:void(0);"> <i class="icon-list-ol"></i> Service & APIs </a>
+               <ul class="sub-menu">
+                  <li> <a href="javascript:void(0);"> <i class="icon-cogs"></i> Fluent XS API <span class="arrow"></span> </a>
+                     <ul class="sub-menu">
+                        <li><a href="#/console/nup/worklist/restapi"><i class="icon-user"></i>REST API</a></li>
+                        <li><a href="javascript:void(0);"><i class="icon-external-link"></i>Unit Tests</a></li>
+                        <li><a href="javascript:void(0);"><i class="icon-bell"></i>Performance Tests</a></li>
+                        <li><a href="javascript:void(0);"><i class="icon-bell"></i>Code Coverage</a></li>
+                        <li><a href="javascript:void(0);"><i class="icon-bell"></i>Code Analysis</a></li>
+                        <li><a href="javascript:void(0);"><i class="icon-bell"></i>About</a></li>
+                        <li><a href="javascript:void(0);"><i class="icon-bell"></i>Activity</a></li>
+                     </ul>
+                  </li>
+                  <li> <a href="javascript:void(0);"> <i class="icon-globe"></i> Fluent XS UI <span class="arrow"></span> </a>
+                     <ul class="sub-menu">
+                        <li><a href="#/console/nup/worklist/js-sdk"><i class="icon-user"></i>JS SDK</a></li>
+                        <li><a href="#/console/nup/worklist/unit-tests"><i class="icon-external-link"></i> Unit Tests</a></li>
+                        <li><a href="#/console/nup/worklist/performance-tests"><i class="icon-bell"></i> Performance Tests</a></li>
+                        <li><a href="#/console/nup/worklist/code-coverage"><i class="icon-bell"></i> Code Coverage</a></li>
+                        <li><a href="#/console/nup/worklist/code-analysis"><i class="icon-bell"></i> Code Analysis</a></li>
+                        <li><a href="#/console/nup/worklist/about"><i class="icon-bell"></i>About</a></li>
+                        <li><a href="#/console/nup/worklist/activity"><i class="icon-bell"></i> Activity</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+            <li ng-show="Authenticated && PersonTypeId === 1 || PersonTypeId === 6" ng-class="nupClassAnalysis"> <a href="javascript:void(0);"> <i class="icon-large icon-book"></i> Security Analysis <!-- <span class="label label-danger pull-right">6</span> --> </a>
+            <ul class="sub-menu">
+               <li> <a href="#/console/nup/worklist/analysis-report"> <i class="icon-angle-right"></i> Analysis Report </a> </li>
+               <li> <a href="#/console/nup/worklist/analysis-about"> <i class="icon-angle-right"></i> About</a> </li>
+            </ul>
+         </li>
+      </ul>
+      <div ng-show="Authenticated && PersonTypeId === 1">
+         <sidebar-notification></sidebar-notification>
+      </div>
+   </div>
+   <div id="divider" class="resizeable"></div>
+</div>

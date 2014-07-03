@@ -1,0 +1,94 @@
+<bread-crumbs></bread-crumbs>
+<div class="well">
+	<!-- <div id="flash" class="alert fade in alert-success" ng-show="flash" ng-bind="flash"></div> -->
+	<form id="frmmanageRegistration" name="frmmanageRegistration" ng-submit="addRecipient($event)" class="form-horizontal" novalidate>
+		<div class="widget-header">
+			<h4>Add/Edit Recipient</h4>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-md-4 control-label">First name <span class="aesterisk">*</span></label>
+					<div class="col-md-8">
+						<input type="text" id="recipient_fname" name="recipient_fname" ng-model="credentials.recipient_fname" class="form-control" placeholder="Enter First Name.." required/>
+						<input type="hidden" name="party_id" ng-model="credentials.party_id" value=''/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-4 control-label">Last name <span class="aesterisk">*</span></label>
+					<div class="col-md-8">
+						<input type="text" id="recipient_lname" name="recipient_lname" ng-model="credentials.recipient_lname" class="form-control" placeholder="Enter Last Name.." required/>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-md-4 control-label">Email <span class="aesterisk">*</span></label>
+					<div class="col-md-8">
+						<input type="email" id="recipient_email" name="recipient_email" ng-model="credentials.recipient_email" class="form-control" placeholder="Enter Email.." required />
+						<span ng-show="frmmanageRegistration.recipient_email.$error.email">Please enter a valid email address</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-4 control-label">Printer Name</label>
+					<div class="col-md-8">
+						<input type="text" id="printer_name" name="printer_name" ng-model="credentials.printer_name" class="form-control" placeholder="Enter Printer Name.." />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-md-4 control-label">Printer Url</label>
+					<div class="col-md-8">
+						<input type="text" id="printer_url" name="printer_url" ng-model="credentials.printer_url" class="form-control" placeholder="Enter Printer URI.." />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-4 control-label">Draft Folder</label>
+					<div class="col-md-8">
+						<input type="text" id="draft_folder" name="draft_folder" ng-model="credentials.draft_folder" class="form-control"  placeholder="Enter Draft Folder.." />
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-md-4 control-label">Upload Url</label>
+					<div class="col-md-8">
+						<input type="text" id="upload_url" name="upload_url" ng-model="credentials.upload_url" class="form-control" placeholder="Enter Upload Url.." />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-4 control-label">Certificate Url</label>
+					<div class="col-md-8">
+						<input type="text" id="certificate_url" name="certificate_url" ng-model="credentials.certificate_url" class="form-control" placeholder="Enter Certificate Url.."/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-md-4 control-label">Box Email ID</label>
+					<div class="col-md-8">
+						<input type="text" id="printer_url" name="printer_url" ng-model="credentials.boxemail" class="form-control" placeholder="Enter Box Email.." />
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-md-4 control-label">HISP Email ID</label>
+					<div class="col-md-8">
+						<input type="text" id="upload_url" name="upload_url" ng-model="credentials.hispemail" class="form-control" placeholder="Enter HISP Email.." />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-actions">
+        <button class="btn btn-primary"  type="submit" ng-disabled="frmmanageRegistration.$invalid">Save</button>
+    </div>	
+</div>
+
+</form>
+</div>

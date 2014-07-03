@@ -1,0 +1,38 @@
+<bread-crumbs></bread-crumbs>
+<div class="container">
+   <div class="row">
+   <div class="col-md-12">
+      <div class="span12"><h3><strong>Server Health Check Status</strong></h3><p>&nbsp;</p></div>
+      <div class="widget">
+         <div class="widget-header">
+            <h4><i class="icon-reorder"></i> Servers</h4>
+         </div>
+         <div class="widget-content">
+            <table class="table table-striped table-hover table-checkable datatable">
+               <thead>
+                  <tr>
+                     <th>#</th>
+                     <th>Name</th>
+                     <th class="hidden-xs">Status</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td ng-bind="is_server_no"></td>
+                     <td ng-bind="is_server_name"></td>
+                     <td ng-bind="is_server_status"></td>
+                     <td><a href="" ng-click="refreshISStatus();">Refresh</a></td>
+                  </tr>
+                  <tr>
+                     <td ng-bind="esb_server_no"></td>
+                     <td ng-bind="esb_server_name"></td>
+                     <td ng-bind="esb_server_status"></td>
+                     <td><a href="" ng-click="refreshESBStatus();">Refresh</a></td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+</div>
+</div>

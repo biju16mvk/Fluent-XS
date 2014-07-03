@@ -1,0 +1,33 @@
+<ul ng-if="Authenticated" class="nav navbar-nav navbar-left hidden-xs hidden-sm">
+                  <li> <a href="#/download">Download Fluent XA</a> </li>
+               </ul>
+               <ul ng-if="Authenticated" class="nav navbar-nav navbar-right">
+                  <li ng-show ="PersonTypeId === 1" class="dropdown"> <a href="" class="dropdown-toggle" data-toggle="dropdown" ng-click="openNotification()"> <i class="icon-warning-sign"></i> <span class="badge" ng-bind="NotificationCount"></span> </a>
+                     <ul class="dropdown-menu extended notification">
+                        <li class="title">
+                           <p>Notifications</p>
+                        </li>
+                        <li> <a href="javascript:void(0);"> <span class="label label-success"><i class="icon-plus"></i></span> <span class="message">{{todayactivity}} activities today.</span></a> </li>
+                        <li> <a href="javascript:void(0);"> <span class="label label-success"><i class="icon-plus"></i></span> <span class="message">
+                           <ng-pluralize count="todayuser"
+                              when="{
+                              '0': 'No user registered today',
+                              'one': '1 user registered today',
+                              'other': '{} users registered today'}">
+                           </ng-pluralize></span></a> </li>
+                        <li> <a href="javascript:void(0);"> <span class="label label-success"><i class="icon-plus"></i></span> <span class="message">{{ActivityCount}} total activities.</span></a> </li>
+                        <li> <a href="javascript:void(0);"> <span class="label label-success"><i class="icon-plus"></i></span> <span class="message">{{UserCount}} total users.</span></a> </li>
+                     </ul>
+                  </li>
+                  <!-- <li> <a href="" class="dropdown-toggle row-bg-toggle"> <i class="icon-resize-vertical"></i> </a> </li>
+                   <li class="dropdown"> <a href="" class="project-switcher-btn dropdown-toggle"> <i class="icon-folder-open"></i> <span>Projects</span> </a> </li> -->
+                  <li class="dropdown user"> <a href="" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-male"></i> <span class="username" ng-bind="Name"></span> <i class="icon-caret-down small"></i> </a>
+                     <ul class="dropdown-menu">
+                        <li><a href="#/home/{{PartyUniqueID}}"><i class="icon-user"></i> Dashboard</a></li>
+                        <li><a href="#/edit/{{PartyUniqueID}}"><i class="icon-cog"></i> Update Profile</a></li>
+                        <li><a href="#/changepassword/{{PartyUniqueID}}"><i class="icon-cog"></i> Change Password</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" ng-controller="LoginCtrl" ng-click="logout()"><i class="icon-key"></i> Log Out</a></li>
+                     </ul>
+                  </li>
+               </ul>
